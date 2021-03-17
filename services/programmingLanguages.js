@@ -27,7 +27,7 @@ async function create(programmingLanguage) {
         ]
     );
 
-    let message = 'Error in programming';
+    let message = 'Error in insert user';
 
     if(result.affectedRows) {
         message = 'Programming language';
@@ -36,7 +36,26 @@ async function create(programmingLanguage) {
     return {message};
 }
 
+async function update(id, programmingLanguage){
+    const result = await db.query(
+        `update users set name=?, gender=? where id=?`,
+        [
+            programmingLanguage.name, programmingLanguage.gender, id
+        ]
+    );
+
+    let message = 'Error in updateing users';
+
+    if (result.affectedRows){
+        message = "User update successfully"
+    }
+
+    return {message}
+}
+
+
 module.exports = {
     getMultiple,
-    create
+    create,
+    update
 }
