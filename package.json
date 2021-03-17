@@ -1,0 +1,16 @@
+{
+  "name": "api_express",
+  "version": "1.0.0",
+  "description": "A demo REST API with Node.js Express.js and MySQL for most popular programming languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fazrithe/api_exress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
