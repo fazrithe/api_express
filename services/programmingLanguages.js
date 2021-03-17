@@ -53,9 +53,25 @@ async function update(id, programmingLanguage){
     return {message}
 }
 
+async function remove(id){
+    const result = await db.query(
+        `delete from users where id=?`,
+        [id]
+    );
+
+    let message = 'Error in deleting user';
+
+    if (result.affectedRows){
+        message = 'User deleted seuccessfully';
+    }
+
+    return {message}
+}
+
 
 module.exports = {
     getMultiple,
     create,
-    update
+    update,
+    remove
 }
